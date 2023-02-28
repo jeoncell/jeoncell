@@ -1,0 +1,13 @@
+조회수 증가
+댓글달기
+
+
+------------------------------------------
+
+db 백업
+exp userid=system/1234@xe owner=JAVAAA file=d:\JAVAAA.dmp
+
+
+
+db 넣기
+imp userid=system/1234@xe fromuser=JAVAAA touser=JAVAAA file=d:\db301JAVAAA.dmp
