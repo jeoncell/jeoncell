@@ -1,0 +1,46 @@
+CREATE TABLE NOTICEBOARD(
+NUM NUMBER PRIMARY KEY,
+WRITER VARCHAR2(20),
+SUBJECT VARCHAR2(50),
+EMAIL VARCHAR2(40),
+CONTENT VARCHAR2(1000),
+PASSWORD VARCHAR2(20),
+REG_DATE DATE DEFAULT SYSDATE,
+READCOUNT NUMBER DEFAULT 0,
+IP VARCHAR2(30),
+REF NUMBER,
+RE_STEP NUMBER,
+RE_LEVEL NUMBER
+);
+
+CREATE SEQUENCE NUM_SEQ;
+
+create table usertbl(
+userId varchar2(20) primary key,
+userPwd varchar2(20), 
+userName varchar2(20),
+userGender varchar2(20),
+userEmail varchar2(50)
+);
+
+desc usertbl;
+
+create table boardscore(
+sno number primary key,
+num number not null ,
+userid varchar2(20) not null,
+score number(1) not null,
+cmt nvarchar2(100),
+regDate date default sysdate,
+CONSTRAINT fk_num foreign key(num) REFERENCES noticeboard(num) ,
+CONSTRAINT fk_userId foreign key(userid) REFERENCES usertbl(userId)
+);
+
+
+
+create SEQUENCE sno_seq;
+
+
+
+
+
